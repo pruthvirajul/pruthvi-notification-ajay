@@ -44,13 +44,13 @@ async function createTables() {
 // CORS configuration
 const corsOptions = {
     origin: [
-        'http://51.20.191.97:5503',
-        'http://51.20.191.97:5503',
-        'http://51.20.191.97:3601',
-        'http://51.20.191.97:8053', // HR Notification Portal
-        'http://51.20.191.97:8054', // Employee Notification Portal
-        'http://51.20.191.97:8053',
-        'http://51.20.191.97:8054',
+        'http://13.60.81.186:5503',
+        'http://13.60.81.186:5503',
+        'http://13.60.81.186:3601',
+        'http://13.60.81.186:8053', // HR Notification Portal
+        'http://13.60.81.186:8054', // Employee Notification Portal
+        'http://13.60.81.186:8053',
+        'http://13.60.81.186:8054',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -162,7 +162,7 @@ async function startServer() {
         client.release();
         await createTables();
         app.listen(port, host, () => {
-            console.log(`Server running on http://${host}:${port} (accessible at http://51.20.191.97:${port})`);
+            console.log(`Server running on http://${host}:${port} (accessible at http://13.60.81.186:${port})`);
         });
     } catch (error) {
         console.error('Error starting server:', error.message, error.stack);
