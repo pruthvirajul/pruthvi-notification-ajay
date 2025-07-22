@@ -14,7 +14,7 @@ const pool = new Pool({
     user: process.env.PG_USER || 'postgres',
     host: process.env.PG_HOST || 'postgres',
     database: process.env.PG_DATABASE || 'new_employee_db',
-    password: process.env.PG_PASSWORD || 'admin123',
+    password: process.env.PG_PASSWORD || 'admin321',
     port: process.env.PG_PORT || 5432,
 });
 
@@ -44,13 +44,13 @@ async function createTables() {
 // CORS configuration
 const corsOptions = {
     origin: [
-        'http://127.0.0.1:5503',
-        'http://localhost:5503',
-        'http://44.223.23.145:3601',
-        'http://44.223.23.145:8053', // HR Notification Portal
-        'http://44.223.23.145:8054', // Employee Notification Portal
-        'http://localhost:8053',
-        'http://localhost:8054',
+        'http://51.20.191.97:5503',
+        'http://51.20.191.97:5503',
+        'http://51.20.191.97:3601',
+        'http://51.20.191.97:8053', // HR Notification Portal
+        'http://51.20.191.97:8054', // Employee Notification Portal
+        'http://51.20.191.97:8053',
+        'http://51.20.191.97:8054',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -162,7 +162,7 @@ async function startServer() {
         client.release();
         await createTables();
         app.listen(port, host, () => {
-            console.log(`Server running on http://${host}:${port} (accessible at http://44.223.23.145:${port})`);
+            console.log(`Server running on http://${host}:${port} (accessible at http://51.20.191.97:${port})`);
         });
     } catch (error) {
         console.error('Error starting server:', error.message, error.stack);

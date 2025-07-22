@@ -10,7 +10,7 @@ services:
     environment:
       - PG_HOST=postgres
       - PG_USER=postgres
-      - PG_PASSWORD=admin123
+      - PG_PASSWORD=admin321
       - PG_DATABASE=new_employee_db
       - PG_PORT=5432
       - PORT=3429
@@ -53,7 +53,7 @@ services:
       - "5429:5432"
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=admin123
+      - POSTGRES_PASSWORD=admin321
       - POSTGRES_DB=new_employee_db
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
